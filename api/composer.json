@@ -1,0 +1,17 @@
+{
+    "name": "isodata",
+    "require": {
+        "slim/slim": "^3.5",
+		"tuupola/slim-jwt-auth": "^2.3",
+        "phpmailer/phpmailer": "^5.2"
+    },
+	 "require-dev": {
+        "phpunit/phpunit": "5.5.*"
+    },
+    "authors": [
+        {
+            "name": "Max",
+            "email": "Max"
+        }
+    ]
+}
