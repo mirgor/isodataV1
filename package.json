@@ -1,0 +1,12 @@
+{
+  "name": "ISOData",
+  "version": "1.0.0",
+  "description": "ISOData",
+  "scripts": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-connect-php": "0.0.8",
+    "gulp-server-livereload": "^1.8.4"
+  },
+  "dependencies": {}
+}

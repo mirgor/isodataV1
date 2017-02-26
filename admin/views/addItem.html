@@ -1,0 +1,63 @@
+<h3>Додавання матеріалу</h3>
+<div>
+    <form name="addForm">
+        <div class="row AddItemsInput">
+            <div class="col-sm-12 col-md-8">
+                <label for="titleItems">Назва даних<span class="starInput">*</span>:</label>
+                <input type="text" name="name" ng-required="true" class="form-control" id="titleItems" placeholder="назва даних" ng-model="name">
+            </div>
+        </div>
+        <div class="row AddItemsInput">
+            <div class="col-sm-12 col-md-8">
+                <label for="link">Веб-посилання<span class="starInput">*</span>:</label>
+                <input type="text" name="link" ng-required="true" class="form-control" id="link" placeholder="посилання" ng-model="link">
+            </div>
+        </div>
+        <div class="row AddItemsInput">
+            <div class="col-sm-12 col-md-8">
+                <label for="owner">Власник даних:</label>
+                <input type="text" class="form-control" id="owner" ng-model="owner" placeholder="ім'я або назва">
+            </div>
+        </div>
+        <div class="row AddItemsInput" ng-init="getFormat()">
+            <p class="dataInput">Формат файлу:</p>
+            <div class="col-sm-12 col-md-8">
+                <select class="form-control" ng-model="format">
+                    <option ng-repeat="format in formats" value="{{format.id}}" >{{format.format_name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row AddItemsInput" ng-init="dateCalendar()">
+            <p class="dataInput">Період часу, за який ці дані<span class="starInput">*</span>:</p>
+            <div class="col-sm-12 col-md-3">
+                <div>
+                    <input ng-model="date" name="daterange" type="text" class="form-control" placeholder="період">
+                </div>
+            </div>
+        </div>
+        <div class="row AddItemsInput" ng-init="getGeo()">
+            <div class="col-sm-12 col-md-6">
+                <p class="dataInput">Просторові об’єкти<span class="starInput">*</span></p>
+                <div id="geoObj" class="treeview scroolTree" ></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <p class="dataInput">Ключові слова<span class="starInput">*</span></p>
+                <div id="keyObj" class="treeview scroolTree" ng-init="getKey()"></div>
+            </div>
+        </div>
+        <div class="row AddItemsInput">
+        </div>
+
+        <div class="row AddItemsInput">
+            <div class="col-sm-12">
+                <label for="description">Опис:</label>
+                <textarea ng-model="description" class="form-control" id="description"></textarea>
+            </div>
+        </div>
+        <div class="row" style="padding: 15px" >
+            <div class="col-sm-offset-11">
+                <botton class="btn btn-danger"ng-click="addVarificationItem()">Додати дані</botton>
+            </div>
+        </div>
+    </form>
+</div>

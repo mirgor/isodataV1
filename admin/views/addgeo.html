@@ -1,0 +1,16 @@
+<h3>Додавання географічного об'єкту</h3>
+<div ng-init="getItemsEdit()">
+    <div class="col-xs-12 col-md-6">
+        <h4>Виберіть потрібний регіон</h4>
+        <div id="geoObj" class="treeview scroolTree" ng-init="getGeo()"></div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <div class="input-group" style="padding-top: 40px">
+            <input name='inputAddGeoName' class="form-control" type="text" ng-model="valueAddGeo">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" ng-click="addGeo()">Додати</button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+</div>

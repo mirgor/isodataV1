@@ -1,0 +1,14 @@
+<h3>Переміщення географічного матеріалу</h3>
+<div ng-init="getGeo1()">
+    <div class="col-xs-12 col-md-5">
+        <h4>Виберіть те що потрібно перемістить</h4>
+        <div id="geoObj1" class="treeview scroolTree"></div>
+    </div>
+    <div class="col-xs-12 col-md-5 col-md-offset-1" ng-init="getGeo2()">
+        <h4>Виберіть куди вам потрібно перемістить</h4>
+        <div id="geoObj2" class="treeview scroolTree"></div>
+    </div>
+    <div class="row" style="padding: 15px">
+        <button class="btn btn-primary col-xs-12" ng-click="moveGeo()">Перемістити</button>
+    </div>
+</div>

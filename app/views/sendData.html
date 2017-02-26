@@ -1,0 +1,24 @@
+<div class="container" role="main" ng-controller="sendItemController">
+    <div class="row">
+        <div class="col-lg-12"><h2 class="text-center">Повідомити про відкриті данні</h2></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <lable for="titleItem">Назва матеріалу</lable>
+            <input type="text" id="titleItem" ng-model="titleItem" style="width: 100%">
+            <lable for="linkItem">Веб-посилання (обов'язково)</lable>
+            <input type="text" id="linkItem" ng-model="linkItem" style="width: 100%">
+            <lable for="ownerItem">Власник</lable>
+            <input type="text" id="ownerItem" ng-model="ownerItem" style="width: 100%">
+            <lable for="dateItem">Період часу, за який ці дані</lable>
+            <input type="text" id="dateItem" ng-model="dateItem" style="width: 100%">
+            <lable for="geoItem">Геогрфічна приналежність (через кому)</lable>
+            <input type="text" id="geoItem" ng-model="geoItem" style="width: 100%">
+            <lable for="keyItem">Ключові слова (через кому)</lable>
+            <input type="text" id="keyItem" ng-model="keyItem" style="width: 100%">
+            <lable for="descItem">Опис</lable>
+            <textarea type="text" id="descItem" ng-model="descItem" style="width: 100%"></textarea>
+            <button class="btn btn-primary" ng-click="getData()">Відправити</button>
+        </div>
+    </div>
+</div>

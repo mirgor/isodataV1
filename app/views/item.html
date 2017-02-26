@@ -1,0 +1,50 @@
+    <div class="container" role="main" style="padding-top: 2%" ng-init="getItem()">
+        <div class="row">
+            <div class="col-lg-12 text-center" style="width:100%;">
+                <a href="/#/"><img src="/assets/img/logo.png" alt="ISOData" width="100%" style="max-width: 450px;"></a>
+            </div>
+        </div>
+
+        <div>
+            <div style="height: 30px"></div>
+
+            <div class="row padded">
+                <div class="col-lg-3 col-md-1 col-sm-1 col-xs-1"></div>
+                <div class="col-lg-6 col-md-10 col-sm-10 col-xs-10, text-center"><h1>{{item.name}}</h1></div>
+                <div class="col-lg-3 col-md-1 col-sm-1 col-xs-1"></div>
+            </div>
+
+            <div style="height: 10px"></div>
+
+            <div class="row padded">
+                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"></div>
+                <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
+                    <div class="col-lg-8 col-md-7 col-sm-6, col-xs-12">
+                        <h4 class="">Власник:</h4><h3 style="margin-top: 0px;"><small><p>{{item.owner}}</p></small></h3>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+                        <h4>Дата:</h4><h3 style="margin-top: 0px";><small><p>з {{item.date_start}} по {{item.date_end}} </p></small></h3>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"></div>
+            </div>
+            <div class="row padded">
+                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
+                        <div class="thumbnail">
+                            <div class="caption" style="font-size: 16px">
+                                <p><b>Посилання: </b><a href="{{item.link}}">{{item.name}}</a><sup style="padding-left: 7px; padding-bottom: 20px"><button ng-click="checkLinkItem()" type="button" class="btn btn-warning btn-xs">Не відкривається</button></sup></p>
+                                <p><b>Теги: </b>{{item.keyObj}}</p>
+                                <p><b>Просторові об'єкти: </b>{{item.geosObj}}</p>
+                                <p><b>Формат даних: </b>{{item.format_name}}</p>
+                                <p><b>Опис: </b>{{item.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"></div>
+            </div>
+        </div>
+
+        <a href="/#/"><p class="text-center"><button class="btn btn-primary" type="button"><span class="glyphicon"></span>Повернутися на головну</button></p></a>
+        <div style="height: 10px"></div>
+    </div>

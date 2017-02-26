@@ -1,0 +1,19 @@
+<h3>Редагування назви ключового слова</h3>
+<div ng-init="getItemsKey()">
+    <div class="col-xs-12 col-md-6">
+        <h4>Виберіть потрібне ключове слово</h4>
+        <div id="keyObj" class="treeview scroolTree" ng-init="getKey()"></div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <div class="input-group" style="padding-top: 40px">
+            <input name='inputForEditKeyName' class="form-control" type="text" ng-model="valueEditKeyName">
+            <span class="input-group-btn">
+                <button id="viewBtnForEditKeyName" disable class="btn btn-primary" disabled ng-click="editNameKey()">Змінити</button>
+            </span>
+            <span class="input-group-btn">
+                <button id="viewBtnForDeleteKeyName" disable class="btn btn-danger" disabled ng-click="deleteKey()">Видалити</button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+</div>

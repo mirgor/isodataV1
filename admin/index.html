@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Адмін панель</title>
+    <base href="/"/>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/bower_components/pikaday/css/pikaday.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-treeview/dist/bootstrap-treeview.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+</head>
+<body ng-app="adminApp" ng-controller="admin">
+<div class="container-fluid" style="padding-top: 20px">
+    <ul ng-if="$user" class="nav navbar-nav pull-right">
+        <li><a>{{$user.name}}</a></li>
+        <li><a href="" ng-click="logout()">Вийти</a></li>
+    </ul>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-xs-12 col-sm-4">
+            <div ng-if="!$user" ng-controller="LoginController">
+                <form ng-submit="login()">
+                    <div class="form-group">
+                        <label for="login">Логін</label>
+                        <input type="text" ng-model="user.login" class="form-control" id="login" placeholder="Логін">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" ng-model="user.password" class="form-control" id="password" placeholder="Логін">
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Увійти</button>
+                </form>
+            </div>
+        </div>
+    </div>
+  <!--  <div class="row" ng-if="$user">
+        <div class="col-xs-12 col-md-2">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="/admin/#/addItem">Додавання матеріалу</a></li>
+                <li><a href="/admin/#/editItems">Редагування матеріалу</a></li>
+                <li><a href="/admin/#/addgeo">Додавання географічного об'єкта</a></li>
+                <li><a href="/admin/#/moveGeo">Переміщення географічних об'єктів</a></li>
+                <li><a href="/admin/#/editGeo">Редагування географічних об'єктів</a></li>
+                <li><a href="/admin/#/addKey">Додавання ключового слова</a></li>
+                <li><a href="/admin/#/moveKey">Переміщення ключового слова</a></li>
+                <li><a href="/admin/#/editKey">Редагування ключового слова</a></li>
+                <li><a href="/admin/#/addFormat">Додавання формату файлу</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-9">
+            <ng-view></ng-view>
+        </div>
+    </div>-->
+</div>
+
+
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="/bower_components/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+<script src="/bower_components/moment/moment.js"></script>
+<script src="/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+<script src="/admin/app/admin.js"></script>
+
+</body>
+</html>

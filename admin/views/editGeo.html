@@ -1,0 +1,19 @@
+<h3>Редагування назви географічного об'єкту</h3>
+<div>
+    <div class="col-xs-12 col-md-6">
+        <h4>Виберіть потрібний регіон</h4>
+        <div id="geoObj" class="treeview scroolTree" ng-init="getGeo()"></div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <div class="input-group" style="padding-top: 40px">
+            <input name='inputForEditGeoName' class="form-control" type="text" ng-model="valueEditGeoName">
+            <span class="input-group-btn">
+                <button id="viewBtnForEditGeoName" disable class="btn btn-primary" disabled ng-click="editNameGeo()">Змінити</button>
+            </span>
+            <span class="input-group-btn">
+                <button id="viewBtnForDltGeoName" disable class="btn btn-danger" disabled ng-click="deleteGeo()">Видалити</button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+</div>

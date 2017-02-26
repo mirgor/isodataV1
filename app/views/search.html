@@ -1,0 +1,63 @@
+<div class="container" role="main" ng-controller="NewsViewController">
+    <div class="row text-center" style="margin-left: 15px; margin-right: 15px">
+        <a href="/#/"><img src="assets/img/logo.png" alt="ISOData" width="100%" style="max-width: 450px"></a>
+    </div>
+        <div class="row">
+            <form style="height: 45px; padding-left: 15px; padding-right: 15px">
+                <div class="input-group">
+                    <input type="text" class="form-control" required placeholder="Наприклад: Викиди забруднюючих речовин в атмосферне повітря" ng-model="findMainInput">
+                    <span class="input-group-addon" id="sizing-addon1" style="cursor: pointer" title="Параметри пошуку" ng-click="viewParamSearch = !viewParamSearch"><span class="glyphicon glyphicon-tasks"></span></span>
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" ng-click="getPosts()"><span class="glyphicon glyphicon-search" ></span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row" id="tyt" ng-show="viewParamSearch">
+            <div class="col-xs-12 col-sm-12 col-lg-4">
+                <h4 ng-init="getFormat()">Пошук по заданих полях</h4>
+                <select multiple data-size = "5" data-selected-text-format="count > 4" data-none-selected-text="По будь-якому полю" class="selectpicker form-control" ng-model="field">
+                    <option value="name">Назва</option>
+                    <option value="description">Опис</option>
+                    <option value="owner">Власник</option>
+                </select>
+                <h4>Пошук по обраному формату</h4>
+                <select class="selectpicker form-control" ng-model="format" data-live-search="true" multiple data-size = "5" data-selected-text-format="count > 4" data-none-selected-text="Будь-який формат">
+                    <option ng-repeat="format in formats" data-select-format data-last="{{$last}}" value="{{format.id}}" >{{format.format_name}}</option>
+                </select>
+                <h4 ng-init="dateCalendar()">Параметри дати:</h4>
+                <div>
+                    <input ng-model="date" name="daterange" type="text" class="form-control" placeholder="Будь-коли">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-4">
+                <h4>Виберіть потрібний регіон</h4>
+                <div id="geoObj" class="treeview scroolTree" ng-init="getGeo()"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-lg-4">
+                <h4>Виберіть ключові слова</h4>
+                <div id="key" class="treeview scroolTree" ng-init="getKey()"></div>
+            </div>
+        </div>
+    <hr>
+    <div ng-show="viewResSearch" id="row">
+        <div class="text-center"  id="searchElemnt" style="padding-bottom: 15px"><h2>{{textRes}}</h2></div>
+<!--                <div ng-repeat="post in posts | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1" >
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <p><b>Назва: </b>{{post.name}}</p>
+                                <p><b>Власник: </b>{{post.owner}}</p>
+                                <p><b>Дата: </b>{{post.date_start}} по {{post.date_end}}</p>
+                                <p><b>Географічна приналежність: </b>{{post. geosObj}}</p>
+                                <p><b>Ключові слова: </b>{{post.keyObj}}</p>
+                                <p><b>Опис: </b>{{post.description}}</p>
+                                <p><b>Формат даних: </b>{{post.format_name}}</p>
+                                <p><b>Посилання: </b><a href="{{post.link}}">{{post.link}}</a><sup style="padding-left: 7px; padding-bottom: 20px"><button ng-click="checkLinkItem(post.id)" type="button" class="btn btn-warning btn-xs">Не відкривається</button></sup></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+    </div>
+</div>
